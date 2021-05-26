@@ -806,32 +806,12 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 500 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 1200, 35 } // <--    ¯\_(ツ)_/¯
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 2560, 35 } 
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   { 40, 40, 2400, 40 }
 // -------------------
 // see https://www.matterhackers.com/news/3d-printer-firmware-settings-stepper-motor-configuration
 // -------------------
-#define STEPS_PER_REVOLUTION_X 3200
-#define STEPS_PER_REVOLUTION_Y 3200
-#define STEPS_PER_REVOLUTION_Z 3200
-#define STEPS_PER_REVOLUTION_E 200
-
-#define IDLER_TEETH_X 8
-#define IDLER_TEETH_Y 8
-#define MM_PER_INCH 25.4
-
-#define BELT_PITCH_X (.2 * MM_PER_INCH)
-#define BELT_PITCH_Y (.2 * MM_PER_INCH)
-
-#define PITCH_OF_Z_ROD 1.25
-
-// makergear extruder box
-#define EXTRUDER_GEAR_RATIO 13.0
-#define PINCH_WHEEL_DIAMETER 11.59
-#define AXIS_STEPS_PER_UNIT_X (STEPS_PER_REVOLUTION_X / IDLER_TEETH_X / BELT_PITCH_X)
-#define AXIS_STEPS_PER_UNIT_Y (STEPS_PER_REVOLUTION_Y / IDLER_TEETH_Y / BELT_PITCH_Y)
-#define AXIS_STEPS_PER_UNIT_Z (STEPS_PER_REVOLUTION_Z / PITCH_OF_Z_ROD)
-#define AXIS_STEPS_PER_UNIT_E (STEPS_PER_REVOLUTION_E * EXTRUDER_GEAR_RATIO / (PINCH_WHEEL_DIAMETER * PI))
-#define DEFAULT_AXIS_STEPS_PER_UNIT {AXIS_STEPS_PER_UNIT_X, AXIS_STEPS_PER_UNIT_Y, AXIS_STEPS_PER_UNIT_Z, AXIS_STEPS_PER_UNIT_E}
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1263,7 +1243,7 @@
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
 #define Y_MIN_POS 0
-#define Z_MIN_POS 13
+#define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 200
